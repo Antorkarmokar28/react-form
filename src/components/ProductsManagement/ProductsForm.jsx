@@ -1,11 +1,11 @@
-const ProductsForm = () => {
+const ProductsForm = ({ handleAddProduct }) => {
   const handleProductSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const quantity = e.target.quantity.value;
     const price = e.target.price.value;
     const newProduct = { name, quantity, price };
-    console.log(newProduct);
+    handleAddProduct(newProduct);
   };
   return (
     <form onSubmit={handleProductSubmit}>
